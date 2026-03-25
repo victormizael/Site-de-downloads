@@ -67,15 +67,10 @@ body {
   margin-bottom: 15px;
 }
 
-/* botão download */
-.btn {
-  display: inline-block;
-  padding: 10px;
-  background: #2563eb;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-top: 10px;
+/* links clicáveis estilo texto */
+a {
+  color: #3b82f6; /* azul padrão */
+  text-decoration: underline;
 }
 </style>
 </head>
@@ -109,11 +104,11 @@ body {
   <div class="card">
     <h3>Fake Lag V1</h3>
     <p>Melhora conexão no jogo.</p>
-
-    <a class="btn" href="https://www.mediafire.com/file/lv4egu16vhgxivu/fake+lag+V1.apk/file" target="_blank">
-      📥 Baixar
-    </a>
-
+    <p>Baixar Fake Lag V1: 
+      <a href="https://www.mediafire.com/file/lv4egu16vhgxivu/fake+lag+V1.apk/file" target="_blank">
+        aqui
+      </a>
+    </p>
   </div>
 
 </div>
@@ -133,7 +128,6 @@ body {
 // abrir/fechar menu
 function abrir() {
   let menu = document.getElementById("menu");
-
   if (menu.style.width === "200px") {
     menu.style.width = "0";
   } else {
@@ -164,4 +158,4 @@ document.addEventListener("click", function(event) {
 </script>
 
 </body>
-</html>
+  </html>
