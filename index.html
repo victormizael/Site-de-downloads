@@ -109,7 +109,12 @@ body {
   <div class="card">
     <h3>Fake Lag</h3>
     <p>Melhora conexão no jogo.</p>
-    <a class="btn" href="downloads/fake-lag.apk" download>📥 Baixar</a>
+
+    <!-- BOTÃO CORRIGIDO -->
+    <a class="btn" href="downloads/fake-lag.apk" target="_blank">
+      📥 Baixar
+    </a>
+
   </div>
 
 </div>
@@ -145,7 +150,6 @@ function mostrar(secao) {
 
   document.getElementById(secao).style.display = "block";
 
-  // fecha menu depois de clicar
   document.getElementById("menu").style.width = "0";
 }
 
