@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Downloads Free</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+}
+
+/* topo */
+.topo {
+  background: #020617;
+  padding: 15px;
+  text-align: center;
+  font-size: 20px;
+  position: relative;
+}
+
+/* botão menu */
+.menu-btn {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* menu lateral */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  background: #020617;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 1;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background: #1e293b;
+}
+
+/* conteúdo */
+.content {
+  padding: 20px;
+}
+
+/* card */
+.card {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* botão download */
+.btn {
+  display: inline-block;
+  padding: 10px;
+  background: #2563eb;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="topo">
+  <span class="menu-btn" onclick="abrir()">☰</span>
+  Meu Site 🔥
+</div>
+
+<div id="menu" class="sidebar">
+  <a href="#" onclick="abrir()">❌ Fechar</a>
+  <a href="#" onclick="mostrar('inicio')">🏠 Início</a>
+  <a href="#" onclick="mostrar('downloads')">📁 Downloads</a>
+  <a href="#" onclick="mostrar('sensi')">🎯 Sensi</a>
+</div>
+
+<div class="content">
+
+<!-- INICIO -->
+<div id="inicio">
+  <h2>Bem-vindo 🔥</h2>
+  <p>Baixe arquivos e veja dicas.</p>
+</div>
+
+<!-- DOWNLOADS -->
+<div id="downloads" style="display:none;">
+  <h2>Downloads 📁</h2>
+
+  <div class="card">
+    <h3>Fake Lag</h3>
+    <p>Melhora conexão no jogo.</p>
+    <a class="btn" href="downloads/fake-lag.apk" download>📥 Baixar</a>
+  </div>
+
+</div>
+
+<!-- SENSI -->
+<div id="sensi" style="display:none;">
+  <h2>Dicas de Sensi 🎯</h2>
+  <p>Geral: 90</p>
+  <p>Ponto vermelho: 85</p>
+  <p>2x: 80</p>
+  <p>4x: 75</p>
+</div>
+
+</div>
+
+<script>
+// abrir/fechar menu
+function abrir() {
+  let menu = document.getElementById("menu");
+
+  if (menu.style.width === "200px") {
+    menu.style.width = "0";
+  } else {
+    menu.style.width = "200px";
+  }
+}
+
+// trocar de tela
+function mostrar(secao) {
+  document.getElementById("inicio").style.display = "none";
+  document.getElementById("downloads").style.display = "none";
+  document.getElementById("sensi").style.display = "none";
+
+  document.getElementById(secao).style.display = "block";
+
+  // fecha menu depois de clicar
+  document.getElementById("menu").style.width = "0";
+}
+
+// fechar clicando fora
+document.addEventListener("click", function(event) {
+  let menu = document.getElementById("menu");
+  let btn = document.querySelector(".menu-btn");
+
+  if (!menu.contains(event.target) && !btn.contains(event.target)) {
+    menu.style.width = "0";
+  }
+});
+</script>
+
+</body>
+</html>
